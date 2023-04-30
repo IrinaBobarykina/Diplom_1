@@ -1,28 +1,24 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
 
 import static org.junit.Assert.assertEquals;
-
-@RunWith(MockitoJUnitRunner.class)
 
 public class BunTest {
     Bun bun;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         bun = new Bun("Просто космос", 5.25f);
     }
 
     @Test
-    public void checkCorrectName(){
+    public void checkCorrectName() {
         assertEquals("Просто космос", bun.getName());
     }
 
     @Test
-    public void checkCorrectPrice(){
+    public void checkCorrectPrice() {
         assertEquals(5.25f, bun.getPrice(), 0);
     }
 }
