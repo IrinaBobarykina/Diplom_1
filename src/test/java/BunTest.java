@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.Bun;
+import testData.TestNames;
+import testData.TestPrices;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,16 +11,16 @@ public class BunTest {
 
     @Before
     public void setUp() {
-        bun = new Bun("Просто космос", 5.25f);
+        bun = new Bun(TestNames.BUN_NAME, TestPrices.BUN_PRICE);
     }
 
     @Test
-    public void checkCorrectName() {
-        assertEquals("Просто космос", bun.getName());
+    public void getNameCheckThatNameIsCorrect() {
+        assertEquals(TestNames.BUN_NAME, bun.getName());
     }
 
     @Test
-    public void checkCorrectPrice() {
-        assertEquals(5.25f, bun.getPrice(), 0);
+    public void getPriceCheckThatPriceIsCorrect() {
+        assertEquals(TestPrices.BUN_PRICE, bun.getPrice(), 0);
     }
 }

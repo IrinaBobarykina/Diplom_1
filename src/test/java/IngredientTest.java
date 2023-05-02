@@ -4,6 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
+import testData.TestNames;
+import testData.TestPrices;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,8 +25,8 @@ public class IngredientTest {
     @Parameterized.Parameters(name = "Ингредиент: {0} {1} {2}")
     public static Object[] createIngredient() {
         return new Object[][]{
-                {IngredientType.FILLING, "Человеческая многоножка", 300f},
-                {IngredientType.SAUCE, "Нечеловеческая многоручка", 66.6f},
+                {IngredientType.FILLING, TestNames.FILLING_NAME, TestPrices.FILLING_PRICE},
+                {IngredientType.SAUCE, TestNames.SAUCE_NAME, TestPrices.SAUCE_PRICE},
 
         };
     }
@@ -35,17 +37,17 @@ public class IngredientTest {
     }
 
     @Test
-    public void checkCorrectName() {
+    public void getNameCheckThatNameIsCorrect() {
         assertEquals(name, ingredient.getName());
     }
 
     @Test
-    public void checkCorrectPrice() {
+    public void getPriceCheckThatPriceIsCorrect() {
         assertEquals(price, ingredient.getPrice(), 0);
     }
 
     @Test
-    public void checkCorrectType() {
+    public void getTypeCheckThatTypeIsCorrect() {
         assertEquals(type, ingredient.getType());
     }
 
