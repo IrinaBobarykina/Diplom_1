@@ -1,4 +1,4 @@
-<h3 align="center">YANDEX PRACTICUM.SPRINT 7</h3>
+<h3 align="center">YANDEX PRACTICUM.DIPLOM</h3>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
