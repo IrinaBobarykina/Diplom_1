@@ -82,7 +82,12 @@ public class BurgerTest {
     public void getReceiptThreeItemsReceiptIsCorrect() {
         String expectedReceipt;
         String formattedBurgerPrice = String.format("%f%n", TestPrices.EXPECTED_BURGER_PRICE);
-        expectedReceipt = "(==== " + TestNames.BUN_NAME + " ====)\n" + "= " + IngredientType.FILLING.toString().toLowerCase() + " " + TestNames.FILLING_NAME + " =\n" + "= " + IngredientType.SAUCE.toString().toLowerCase() + " " + TestNames.SAUCE_NAME + " =\n" + "(==== " + TestNames.BUN_NAME + " ====)\n\n" + "Price: " + formattedBurgerPrice;
+        expectedReceipt = String.format("(==== %s ====)\n= %s %s =\n= %s %s =\n" + "(==== %s ====)\n\nPrice: %s",
+                TestNames.BUN_NAME,
+                IngredientType.FILLING.toString().toLowerCase(), TestNames.FILLING_NAME,
+                IngredientType.SAUCE.toString().toLowerCase(), TestNames.SAUCE_NAME,
+                TestNames.BUN_NAME,
+                formattedBurgerPrice);
 
         Mockito.when(bun.getName()).thenReturn(TestNames.BUN_NAME);
         Mockito.when(ingredientFilling.getName()).thenReturn(TestNames.FILLING_NAME);
